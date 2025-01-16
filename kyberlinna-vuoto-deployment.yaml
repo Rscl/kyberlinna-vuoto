@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kyberlinna-vuoto
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kyberlinna-vuoto
+  template:
+    metadata:
+      labels:
+        app: kyberlinna-vuoto
+    spec:
+      containers:
+        - name: php-apache
+          image: php:8.2-apache
+          ports:
+            - containerPort: 80
+          env:
+            - name: MYSQL_HOST
+              value: kyberlinna-mysql
+            - name: MYSQL_USER
+              value: root
+            - name: MYSQL_PASSWORD
+              value: kyberlinna
+            - name: MYSQL_DATABASE
+              value: vuotocdb
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kyberlinna-vuoto
+spec:
+  selector:
+    app: kyberlinna-vuoto
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: ClusterIP

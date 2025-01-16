@@ -1,0 +1,22 @@
+{
+    "name": "rscl/vuoto-web",
+    "description": "A very vulnerable web application",
+    "type": "project",
+    "require": {
+        "php": ">=7.4",
+        "dompdf/dompdf": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vendor\\Package\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Hannu Balk",
+            "email": "noreply@balk.fi"
+        }
+    ],
+    "minimum-stability": "stable",
+    "license": "MIT"
+}

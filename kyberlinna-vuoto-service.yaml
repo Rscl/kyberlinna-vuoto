@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kyberlinna-vuoto-service
+spec:
+  selector:
+    app: kyberlinna-vuoto
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30080  # NodePort (valinnainen, voi myös antaa automaattisesti)
+  type: NodePort

@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kyberlinna-mysql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kyberlinna-mysql
+  template:
+    metadata:
+      labels:
+        app: kyberlinna-mysql
+    spec:
+      containers:
+        - name: mysql
+          image: mysql:5.7
+          ports:
+            - containerPort: 3306
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: my-secret-pw
+            - name: MYSQL_DATABASE
+              value: kyberlinna_db
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kyberlinna-mysql
+spec:
+  selector:
+    app: kyberlinna-mysql
+  ports:
+    - protocol: TCP
+      port: 3306
+      targetPort: 3306
+  type: ClusterIP
