@@ -27,7 +27,7 @@
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="index.php">Etusivu</a></li>
                     <li class="nav-item"><a class="nav-link" href="meter-reading.php">Ilmoita vesimittarin lukema</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Ota yhteyttä</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.php">Ota yhteyttä</a></li>
                 </ul>
             </div>
         </div>

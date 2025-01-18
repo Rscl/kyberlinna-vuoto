@@ -22,14 +22,7 @@ $meterReading = $_POST['meterReading'];
     </header>
     <main class="container my-5">
 <?php
-// Yhteys tietokantaan
-$servername = "vuoto-mysql";
-$username = "vuotodb";
-$password = "kyberlinna";
-$dbname = "vuotodb";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
+require_once "db.php";
 // Tarkistetaan yhteys
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
