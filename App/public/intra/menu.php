@@ -9,6 +9,7 @@
                     <li class="nav-item"><a class="nav-link" href="customers.php">Asiakkaat</a></li>
                     <li class="nav-item"><a class="nav-link" href="billing.php">Laskutus</a></li>
                     <li class="nav-item"><a class="nav-link" href="systemmanagement.php">ICS Järjestelmähallinta</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacts.php">Puhelinluettelo</a></li>
                 </ul>
             </div>
         </div>
